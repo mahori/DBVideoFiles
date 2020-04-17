@@ -1,31 +1,20 @@
-﻿
-// DBVideoFiles.h : PROJECT_NAME アプリケーションのメイン ヘッダー ファイルです
-//
-
-#pragma once
+﻿#pragma once
 
 #ifndef __AFXWIN_H__
 #error "PCH に対してこのファイルをインクルードする前に 'pch.h' をインクルードしてください"
 #endif
 
-#include "resource.h"       // メイン シンボル
+#include "Resource.h"
 
-
-// CDBVideoFilesApp:
-// このクラスの実装については、DBVideoFiles.cpp を参照してください
-//
-
-class CDBVideoFilesApp : public CWinApp
+class CDBVideoFilesApp
+    : public CWinApp
 {
 public:
-    CDBVideoFilesApp();
+    CDBVideoFilesApp(void);
 
-    // オーバーライド
-public:
-    virtual BOOL InitInstance();
+    BOOL InitInstance(void) override;
 
-    // 実装
-
+protected:
     DECLARE_MESSAGE_MAP()
 };
 
