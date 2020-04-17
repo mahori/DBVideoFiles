@@ -1,41 +1,12 @@
 ﻿#include "pch.h"
 #include "framework.h"
 #include "DBVideoFilesDlg.h"
-#include <afxdialogex.h>
-#include "DBVideoFiles.h"
+#include "AboutDlg.h"
+#include "Resource.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
-
-class CAboutDlg
-    : public CDialogEx
-{
-public:
-    CAboutDlg(void);
-
-#ifdef AFX_DESIGN_TIME
-    enum { IDD = IDD_ABOUTBOX };
-#endif
-
-protected:
-    void DoDataExchange(CDataExchange* pDX) override;
-
-    DECLARE_MESSAGE_MAP()
-};
-
-CAboutDlg::CAboutDlg(void)
-    : CDialogEx(IDD_ABOUTBOX)
-{
-}
-
-void CAboutDlg::DoDataExchange(CDataExchange* pDX)
-{
-    CDialogEx::DoDataExchange(pDX);
-}
-
-BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
-END_MESSAGE_MAP()
 
 CDBVideoFilesDlg::CDBVideoFilesDlg(CWnd* pParent)
     : CDialogEx(IDD_DBVIDEOFILES_DIALOG, pParent)
