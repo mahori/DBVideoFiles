@@ -33,7 +33,7 @@ BOOL CDBVideoFilesApp::InitInstance(void)
 
     CMFCVisualManager::SetDefaultManager(RUNTIME_CLASS(CMFCVisualManagerWindows));
 
-    SetRegistryKey(_T("アプリケーション ウィザードで生成されたローカル アプリケーション"));
+    SetRegistryKey(L"mahori");
 
     CDBVideoFilesDlg dlg;
     m_pMainWnd = &dlg;
