@@ -40,7 +40,7 @@ bool Database::registerFiles(const wstring& id, const vector<wstring>& files)
 
     try {
         CString deleteSql;
-        deleteSql.Format(L"DELETE FROM VIDEO_FILES WHERE DRIVE_ID = %s", id);
+        deleteSql.Format(L"DELETE FROM video_files WHERE drive = %s", id);
         pDatabase_->ExecuteSQL(deleteSql);
 
         for (const auto& file : files) {
@@ -49,10 +49,11 @@ bool Database::registerFiles(const wstring& id, const vector<wstring>& files)
 
             CString entry(path);
             entry.Delete(0, subPath - 1);
+            entry.Replace(L"\\", L"/");
             entry.Replace(L"'", L"''");
 
             CString insertSql;
-            insertSql.Format(L"INSERT INTO VIDEO_FILES ( DRIVE_ID, PATH ) VALUES ( %s, '%s' )", id, entry);
+            insertSql.Format(L"INSERT INTO video_files ( drive, path ) VALUES ( %s, '%s' )", id, entry);
             pDatabase_->ExecuteSQL(insertSql);
         }
 
